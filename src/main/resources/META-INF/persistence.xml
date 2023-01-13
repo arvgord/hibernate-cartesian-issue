@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+    <persistence-unit name="test">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.arvgord.repository.entity.AccountEntity</class>
+        <class>com.arvgord.repository.entity.ClientEntity</class>
+        <properties>
+            <property name="hibernate.connection.username" value="test" />
+            <property name="hibernate.connection.password" value="test" />
+            <property name="hibernate.connection.pool_size" value="1" />
+            <property name="hibernate.show_sql" value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>
