@@ -26,7 +26,7 @@ internal class IssueTest {
         .withInitScript("mysql.sql")
 
     @Test
-    fun `test hibernate 6 get incorrect results with PostgreSQL`() {
+    fun `test hibernate 6 get incorrect results with PostgreSQL with EntityGraph`() {
         postgresqlContainer.start()
         val em = createEntityManager(postgresqlContainer.jdbcUrl, "org.postgresql.Driver", "org.hibernate.dialect.PostgreSQLDialect")
         createClientsAndAccounts(em)
@@ -50,7 +50,7 @@ internal class IssueTest {
     }
 
     @Test
-    fun `test hibernate 6 get incorrect results with PostgreSQL with criteria`() {
+    fun `test hibernate 6 get correct results with PostgreSQL with Criteria API`() {
         postgresqlContainer.start()
         val em = createEntityManager(postgresqlContainer.jdbcUrl, "org.postgresql.Driver", "org.hibernate.dialect.PostgreSQLDialect")
         createClientsAndAccounts(em)
@@ -82,7 +82,7 @@ internal class IssueTest {
     }
 
     @Test
-    fun `test hibernate 6 get incorrect results with MySQL`() {
+    fun `test hibernate 6 get incorrect results with MySQL with EntityGraph`() {
         mySQLContainer.start()
         val em = createEntityManager(mySQLContainer.jdbcUrl, "com.mysql.jdbc.Driver", "org.hibernate.dialect.MySQLDialect")
         createClientsAndAccounts(em)
@@ -106,7 +106,7 @@ internal class IssueTest {
     }
 
     @Test
-    fun `test hibernate 6 get correct results with MySQL with criteria`() {
+    fun `test hibernate 6 get correct results with MySQL with Criteria API`() {
         mySQLContainer.start()
         val em = createEntityManager(mySQLContainer.jdbcUrl, "com.mysql.jdbc.Driver", "org.hibernate.dialect.MySQLDialect")
         createClientsAndAccounts(em)
