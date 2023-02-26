@@ -106,7 +106,7 @@ internal class IssueTest {
     }
 
     @Test
-    fun `test hibernate 6 get incorrect results with MySQL with criteria`() {
+    fun `test hibernate 6 get correct results with MySQL with criteria`() {
         mySQLContainer.start()
         val em = createEntityManager(mySQLContainer.jdbcUrl, "com.mysql.jdbc.Driver", "org.hibernate.dialect.MySQLDialect")
         createClientsAndAccounts(em)
